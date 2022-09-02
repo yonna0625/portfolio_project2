@@ -1,0 +1,2086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- 날씨 -->
+	<link rel="stylesheet" href="./css/weather-icons.min.css">
+
+    <!-- 최상단 배너에 사용 -->
+	<script src="js/jquery.easing.1.3.min.js"></script>
+	<script src="js/jquery-1.7.1.min.js"></script>
+    
+    <script src="js/jquery-1.12.4.min.js"></script>
+
+    <!-- 벤더 프리픽스를 쓰지 않아도 적용되게 해주는 것 -->
+    <script src="js/prefixfree.min.js"></script> 
+
+
+    <!-- 3.6.0 -> 메뉴 접기에 사용 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/script.js"></script>
+
+</head>
+<body>
+    
+    <div id="container">
+        <h1 style="display: none;">main</h1>
+
+       <!-- 최상단 팝업 -->
+        <div id="popup">
+            <div class="top_info">
+                <ul class="info">
+                    <li class="info_text">부천시 코로나바이러스감염증-19(COVID-19) 종합상황</li>
+                <!-- 버튼 -->
+                    <li class="btn">
+                        <div class="close_btn">
+                            <img src="./image/top_x.png" alt="x">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 모달 팝업 -->
+
+        <div id="modal_popWrap">
+            <div id="popup_modal">
+                <ul>
+                    <li>
+                        <a href="./sub01.html">06/16일자 코로나19 확진 근황 ▶</a>
+                    </li>
+                    <li>
+                        <form action="#" name="notice_form">
+                            <p>
+                                <input type="checkbox" name="chkbok" value="checkbox"> 오늘 하루 이 창을 열지 않음
+                                <a href="javascript:closeWin();">[닫기]</a>
+                            </p>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <header>
+            <!-- 최상단 네비 -->
+            <div id="main_gnb">
+               <div id="main_gnb_content">
+                    <ul>
+                        <li><span>부천시 인구수 : 826,187 명</span></li>
+                        <li><a href="./login.html">로그인</a></li>
+                        <li><a href="#">회원가입</a></li>
+                        <li><a href="#">마일리지</a></li>
+                        <li><a href="#">language</a></li>
+                    </ul>
+               </div>
+            </div> <!-- main_gnb -->
+
+            <!-- 로고/검색창/날씨 등 -->
+            <div id="main_header">
+                <div id="header_content">
+                    <ul>
+                        <li class="header_logo"><a href="#"><img src="./image/main_logo.png" alt="1"></a></li>
+                        <li class="header_logo2"><a href="#"><img src="./image/main_logo1.png" alt="2"></a></li>
+                        <li class="header_search">
+                                <div>
+                                    <input type="text" value="코로나19 백신접종" id="search">
+                                    <a href="#"><img src="./image/search_icon.png" alt="search_icon"></a>
+                                </div>
+                        </li>
+                         
+                        <li class="header_weather"> <!-- api부분 -->
+
+                            <div class="api_wrap">  
+                                <div class="cicon"></div>
+                                <div class="temp_info">
+                                    
+                                    <div class="cname"></div> <!-- 도시이름 -->
+                                    <div class="ctemp"></div> <!-- 현재온도 -->
+                                </div>
+                            </div>
+
+                            <div class="sec"><span>미세먼지24㎍/m3 (좋음) <br>초미세먼지6㎍/m3 (좋음)
+                            </span></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- nav -->
+            <nav>
+                <ul>
+
+                    <!-- 메뉴1: 코로나19극복 -->
+                    <li id="menu1">
+                        
+                        <a href="./sub01.html" class="title_name">코로나19극복</a>
+                        <div class="sub">
+                            <div class="all_title">코로나19극복</div>
+                            <div class="sub_title"> <!-- table-row -->
+                                
+                                <!-- 1번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="./sub01.html">코로나19대응현황</a></li>
+                                    </ul>  
+                                    <ul class="right"></ul> <!-- table-cell -->
+                                </div>
+                                
+                                <!-- 2번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">코로나19예방접종</a></li>
+                                    </ul>  
+                                    <ul class="right"></ul>
+                                </div>
+
+                                <!-- 3번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">소상공인 부천시 방역지원금</a></li>
+                                    </ul> 
+                                    <ul class="right"></ul>
+                                </div>
+
+                                <!-- 4번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">격리통지서확인</a></li>
+                                    </ul>  
+                                    <ul class="right"></ul> <!-- table-cell -->
+                                </div>
+
+                            </div>
+                        </div>
+                    </li> 
+
+                    <!-- 메뉴2: 부천소식 -->
+                    <li id="menu2">
+                        <a href="./sub02.html" class="title_name">부천소식</a>
+                        <div class="sub">
+                            <div class="all_title">부천소식</div>
+                            <div class="sub_title"> <!-- table-row -->
+                                
+                                <!-- 1번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="./sub02.html">새소식</a></li>
+                                    </ul>  
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 새소식</a>
+                                            <a href="#">· 경기도소식</a>
+                                            <a href="#">· 광역동소식</a>
+                                        </li>
+                                    </ul> <!-- table-cell -->
+                                </div>
+                                
+                                <!-- 2번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">부천뉴스</a></li>
+                                    </ul>  
+                                    <ul class="right"> <!-- table-cell -->
+                                        <li>
+                                            <a href="#">· 보도자료</a>
+                                            <a href="#">· 생생부천</a>
+                                            <a href="#">· 사진갤러리</a>
+                                            <a href="#">· 복사골부천</a>
+                                            <a href="#">· 만화로보는부천</a>
+                                            <a href="#">· 부천알리미</a>
+                                            <a href="#">· 부천시보</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- 3번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">공고·입법예고</a></li>
+                                    </ul>  
+                                    <ul class="right"> <!-- table-cell -->
+                                        <li>
+                                            <a href="#">· 고시·공고·입법예고</a>
+                                            <a href="#">· 기타공고</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- 4번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">채용정보</a></li>
+                                    </ul>  
+                                    <ul class="right"> <!-- table-cell -->
+                                        <li>
+                                            <a href="#">· 부천시채용공고(채용시험)</a>
+                                            <a href="#">· 부천일자리센터</a>
+                                            <a href="#">· 공공일자리사업</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- 5번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">입찰계약</a></li>
+                                    </ul>  
+                                    <ul class="right"> <!-- table-cell -->
+                                        <li>
+                                            <a href="#">· 입찰공고(나라장터)</a>
+                                            <a href="#">· 수의계약공고</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                             
+                        </div>
+                    </li> 
+                   
+                    <!-- 메뉴3 : 참여·소통 -->
+                    <li id="menu3">
+                        <a href="#none" class="title_name">참여·소통</a>
+                        <div class="sub">
+                            <div class="all_title">참여·소통</div>
+                            <div class="sub_title"> <!-- table-row -->
+                                
+                                <!-- 1번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">시장에게바란다</a></li>
+                                    </ul>  
+                                    <ul class="right"></ul> <!-- table-cell -->
+                                </div>
+                                
+                                <!-- 2번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">시민제안</a></li>
+                                    </ul>  
+                                    <ul class="right"> <!-- table-cell -->
+                                        <li>
+                                            <a href="#">· 제안제도안내</a>
+                                            <a href="#">· 시민제안</a>
+                                            <a href="#">· 주민총회투표참가신청</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- 3번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">청렴부천클린신고</a></li>
+                                    </ul>  
+                                    <ul class="right"> <!-- table-cell -->
+                                        <li>
+                                            <a href="#">· 부조리·갑질신고</a>
+                                            <a href="#">· 부패·공익신고</a>
+                                            <a href="#">· 공직자부동산비리익명신고</a>
+                                            <a href="#">· 건설공사부실시공방지신고</a>
+                                            <a href="#">· 사전컨설팅감사제도</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- 4번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">제보·신고센터</a></li>
+                                    </ul>  
+                                    <ul class="right"> <!-- table-cell -->
+                                        <li>
+                                            <a href="#">· 부정불량식품신고</a>
+                                            <a href="#">· 부동산거래계약신고</a>
+                                            <a href="#">· 부동산불법거래신고센터</a>
+                                            <a href="#">· 불법주정차신고</a>
+                                            <a href="#">· 실종자신고</a>
+                                            <a href="#">· 안전신문고</a>
+                                            <a href="#">· 유기동물·유실물신고</a>
+                                            <a href="#">· 행정처분공개</a>
+                                            <a href="#">· 관련사이트</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- 5번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">적극행정</a></li>
+                                    </ul>  
+                                    <ul class="right"> <!-- table-cell -->
+                                        <li>
+                                            <a href="#">· 적극행정·소극행정</a>
+                                            <a href="#">· 적극행정추진</a>
+                                            <a href="#">· 적극행정소식</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- 6번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">행정규제개혁</a></li>
+                                    </ul>  
+                                    <ul class="right"> <!-- table-cell -->
+                                      
+                                    </ul>
+                                </div>
+
+                                <!-- 7번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">자유게시판</a></li>
+                                    </ul>  
+                                    <ul class="right"></ul> <!-- table-cell -->
+                                </div> 
+
+                                <!-- 8번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">칭찬합시다</a></li>
+                                    </ul>  
+                                    <ul class="right"></ul> <!-- table-cell -->
+                                </div> 
+
+                                <!-- 9번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">시민옴부즈만</a></li>
+                                    </ul>  
+                                    <ul class="right"></ul> <!-- table-cell -->
+                                </div> 
+                                
+                                <!-- 10번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">설문참여</a></li>
+                                    </ul>  
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 진행중설문</a>
+                                            <a href="#">· 종료된설문</a>
+                                        </li>
+                                    </ul>
+                                </div> 
+
+                                 <!-- 11번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">정책토론</a></li>
+                                    </ul>  
+                                   <ul class="right">
+                                        <li>
+                                            <a href="#">· 진행중토론</a>
+                                            <a href="#">· 종료된토론</a>
+                                        </li>
+                                   </ul>
+                                </div> 
+                                
+
+
+
+                            </div>
+                            
+                                    
+                            </div>
+                    </li> 
+
+                    <!-- 메뉴4: 정보공개 -->
+                    <li id="menu4">
+                        <a href="./sub03.html" class="title_name">정보공개</a>
+                        <div class="sub">
+                            <div class="all_title">정보공개</div>
+                            <div class="sub_title"> <!-- table-row -->
+                                
+                                <!-- 1번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="./sub03.html">주요시책</a></li>
+                                    </ul>  
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 시정목표</a>
+                                            <a href="#">· 2022시정계획</a>
+                                            <a href="#">· 비전부천2031</a>
+                                            <a href="#">· 부천시핵심가치</a>
+                                            <a href="#">· 주요현안업무</a>
+                                            <a href="#">· BSC성과관리</a>
+                                        </li>
+                                    </ul> 
+                                </div>
+                                
+                                <!-- 2번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">업무계획</a></li>
+                                    </ul>  
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 월간업무계획</a>
+                                            <a href="#">· 일일부천</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- 3번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">정보공개제도</a></li>
+                                    </ul> 
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 월간업무계획</a>
+                                            <a href="#">· 정보공개청구</a>
+                                            <a href="#">· 사전정보공표관리</a>
+                                            <a href="#">· 사전정보공표</a>
+                                            <a href="#">· 비공개대상정보범위세부기준</a>
+                                            <a href="#">· 인사운영통계</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- 4번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">행정서비스헌장</a></li>
+                                    </ul>  
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 월간업무계획</a>
+                                            <a href="#">· 헌장전문</a>
+                                            <a href="#">· 공통이행기준</a>
+                                            <a href="#">· 분야별이행기준</a>
+                                        </li>
+                                    </ul> 
+                                </div>
+
+                                <!-- 5번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">업무추진비</a></li>
+                                    </ul>  
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 시장·부시장</a>
+                                            <a href="#">· 국장·과장</a>
+                                            <a href="#">· 동장</a>
+                                        </li>
+                                    </ul> 
+                                </div>
+
+                                <!-- 6번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">개인정보처리실태</a></li>
+                                    </ul>  
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 개인정보목적외이용,제3자제공</a>
+                                            <a href="#">· 개인정보처리업무위탁</a>
+                                        </li>
+                                    </ul> 
+                                </div>
+
+                                <!-- 7번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">공공데이터</a></li>
+                                    </ul>  
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 공공데이터</a>
+                                            <a href="#">· 공공데이터목록</a>
+                                        </li>
+                                    </ul> 
+                                </div>
+
+                                 <!-- 8번째 줄 -->
+                                 <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">부천통계</a></li>
+                                    </ul>  
+                                    <ul class="right"></ul> 
+                                </div>
+                                
+                                 <!-- 9번째 줄 -->
+                                 <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">정책실명제</a></li>
+                                    </ul>  
+                                    <ul class="right"></ul> 
+                                </div>
+                                
+                                 <!-- 10번째 줄 -->
+                                 <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">예산·결산</a></li>
+                                    </ul>  
+                                    <ul class="right"></ul> 
+                                </div>
+                                
+                                 <!-- 11번째 줄 -->
+                                 <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">조직운영5대지표공개</a></li>
+                                    </ul>  
+                                    <ul class="right"></ul> 
+                                </div>
+                                
+                                 <!-- 12번째 줄 -->
+                                 <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">환경관계법규위반업소공개</a></li>
+                                    </ul>  
+                                    <ul class="right"></ul> 
+                                </div>
+                                
+                                 <!-- 13번째 줄 -->
+                                 <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">자치법규</a></li>
+                                    </ul>  
+                                    <ul class="right"></ul> 
+                                </div>
+                                
+                                 <!-- 14번째 줄 -->
+                                 <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">행정간행물</a></li>
+                                    </ul>  
+                                    <ul class="right"></ul> 
+                                </div>
+
+                            </div>
+                        </div>
+                    </li> 
+
+                    <!-- 메뉴5: 전자민원 -->
+                    <li id="menu5">
+                        <a href="#none" class="title_name">전자민원</a>
+                        <div class="sub">
+                            <div class="all_title">전자민원</div>
+                            <div class="sub_title"> <!-- table-row -->
+                                
+                                <!-- 1번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">온라인민원신청</a></li>
+                                    </ul>  
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 민원상담신고</a>
+                                            <a href="#">· 정부24(민원서비스)</a>
+                                            <a href="#">· 새올민원처리공개</a>
+                                            <a href="#">· 국민신문고</a>
+                                            <a href="#">· 자동차민원안내</a>
+                                            <a href="#">· 가족관계등록안내</a>
+                                        </li>
+                                    </ul> 
+                                </div>
+                                
+                                <!-- 2번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">민원사무안내</a></li>
+                                    </ul>  
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 전자정부민원서식</a>
+                                            <a href="#">· 민원사무서식·민원편람</a>
+                                            <a href="#">· 어디서나민원</a>
+                                            <a href="#">· 민원FAQ</a>
+                                            <a href="#">· 행정정보공동이용</a>
+                                            <a href="#">· 민원1회방문처리제안내</a>
+                                            <a href="#">· 사전심사청구제안내</a>
+                                            <a href="#">· 사회적약자배려창구운영</a>
+                                            <a href="#">· 무료법률상담운영</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- 3번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">여권신청·발급안내</a></li>
+                                    </ul> 
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 여권민원안내</a>
+                                            <a href="#">· 온라인여권재발급안내</a>
+                                            <a href="#">· 여권교부·우편수령</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- 4번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">민원처리사전예약</a></li>
+                                    </ul>  
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 사전상담예약제실시</a>
+                                            <a href="#">· 방문상담예약신청</a>
+                                            <a href="#">· 콜센터상담예약</a>
+                                        </li>
+                                    </ul> 
+                                </div>
+
+                                <!-- 5번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">무인민원발급창구</a></li>
+                                    </ul>  
+                                    <ul class="right"></ul> 
+                                </div>
+
+                                <!-- 6번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">부천시역민원센터</a></li>
+                                    </ul>  
+                                    <ul class="right"></ul> 
+                                </div>
+
+                                <!-- 7번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">세금종합안내</a></li>
+                                    </ul>  
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 종합안내</a>
+                                            <a href="#">· 재산세계산기</a>
+                                            <a href="#">· 취득세계산기</a>
+                                        </li>
+                                    </ul> 
+                                </div>
+
+                                 <!-- 8번째 줄 -->
+                                 <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">상수도요금납부</a></li>
+                                    </ul>  
+                                    <ul class="right"></ul> 
+                                </div>
+                                
+                                 <!-- 9번째 줄 -->
+                                 <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">대형폐기물신고</a></li>
+                                    </ul>  
+                                    <ul class="right"></ul> 
+                                </div>
+                                
+                                 <!-- 10번째 줄 -->
+                                 <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">주정차위반민원처리</a></li>
+                                    </ul>  
+                                    <ul class="right"></ul> 
+                                </div>
+                                
+                                 <!-- 11번째 줄 -->
+                                 <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">공공서비스예약</a></li>
+                                    </ul>  
+                                    <ul class="right"></ul> 
+                                </div>
+                                
+                                 <!-- 12번째 줄 -->
+                                 <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">장애인인권침해신고</a></li>
+                                    </ul>  
+                                    <ul class="right">
+                                        <li><a href="#">· 신고하기</a></li>
+                                    </ul> 
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </li> 
+                   
+                    <!-- 메뉴6: 분야별정보 -->
+                    <li id="menu6">
+                        <a href="#none" class="title_name">분야별정보</a>
+                        <div class="sub">
+                            <div class="all_title">분야별정보</div>
+
+                            <div class="sub_title"> <!-- table-row -->
+                                
+                                <!-- 1번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">문화관광</a></li>
+                                    </ul>  
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 문화사업</a>
+                                            <a href="#">· 복사골문화소식</a>
+                                            <a href="#">· 향토유적</a>
+                                            <a href="#">· 박물관</a>
+                                            <a href="#">· 도서문화교실</a>
+                                            <a href="#">· 공연장·전시관</a>
+                                            <a href="#">· 문화기관안내</a>
+                                            <a href="#">· 부천시문화상</a>
+                                            <a href="#">· 부천의축제</a>
+                                            <a href="#">· 이달의 공연 및 전시</a>
+                                            <a href="#">· 기관별문화프로그램</a>
+                                            <a href="#">· 테마관광</a>
+                                            <a href="#">· 부천의맛집</a>
+                                            <a href="#">· 부천의숙박</a>
+                                            <a href="#">· 웹툰융합센터</a>
+                                            <a href="#">· 문화예술회관</a>
+                                            <a href="#">· 부천의공공조형물</a>
+                                        </li>
+                                    </ul> 
+                                </div>
+                                
+                                <!-- 2번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">체육·교육</a></li>
+                                    </ul>  
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 체육시설</a>
+                                            <a href="#">· 부천연고프로구단</a>
+                                            <a href="#">· 운동부현황</a>
+                                            <a href="#">· 교육강좌</a>
+                                            <a href="#">· 정보취약계층정보화교육</a>
+                                            <a href="#">· 복사골아카데미</a>
+                                            <a href="#">· 평생학습센터</a>
+                                            <a href="#">· 시민학습원</a>
+                                            <a href="#">· 장학재단</a>
+                                            <a href="#">· 교복지원</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- 3번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">복지</a></li>
+                                    </ul> 
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 맞춤형복지</a>
+                                            <a href="#">· 지역사회서비스투자사업</a>
+                                            <a href="#">· 기초생활보장</a>
+                                            <a href="#">· 부천시장애인인권센터</a>
+                                            <a href="#">· 여성</a>
+                                            <a href="#">· 가족·다문화</a>
+                                            <a href="#">· 어르신</a>
+                                            <a href="#">· 장애인</a>
+                                            <a href="#">· 영유아·아동·청소년</a>
+                                            <a href="#">· 유공자지원</a>
+                                            <a href="#">· 복지기관</a>
+                                            <a href="#">· 인생이모작지원센터</a>
+                                            <a href="#">· 아동친화도시</a>
+                                            <a href="#">· 지역사회보장협의체</a>
+                                            <a href="#">· 지역사회 통합돌봄(커뮤니티케어)</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- 4번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">청년</a></li>
+                                    </ul>  
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 청년정책</a>
+                                            <a href="#">· 청년지원</a>
+                                            <a href="#">· 청년일자리</a>
+                                            <a href="#">· 청년공간</a>
+                                            <a href="#">· 청년소통</a>
+                                        </li>
+                                    </ul> 
+                                </div>
+
+                                <!-- 5번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">아기환영부천</a></li>
+                                    </ul>  
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 아기환영부천</a>
+                                            <a href="#">· 프로그램</a>
+                                            <a href="#">· 알림&소통</a>
+                                            <a href="#">· 아기환영시민참여방</a>
+                                            <a href="#">· 다자녀공영주차장감면신청</a>
+                                        </li>
+                                    </ul> 
+                                </div>
+
+                                <!-- 6번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">경제·취업</a></li>
+                                    </ul>  
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 경제발전기본전략</a>
+                                            <a href="#">· 경제전략사업</a>
+                                            <a href="#">· 산업단지현황</a>
+                                            <a href="#">· 기업지원</a>
+                                            <a href="#">· 기업SOS</a>
+                                            <a href="#">· 생활경제</a>
+                                            <a href="#">· 부천페이</a>
+                                            <a href="#">· 부천일자리센터</a>
+                                            <a href="#">· 전통시장</a>
+                                            <a href="#">· 에너지</a>
+                                            <a href="#">· 사회적경제센터</a>
+                                            <a href="#">· 일드림센터</a>
+                                            <a href="#">· 행정체험부업대학생</a>
+                                            <a href="#">· 경기공유서비스</a>
+                                        </li>
+                                    </ul> 
+                                </div>
+
+                                <!-- 7번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">부동산·도시계획·개발</a></li>
+                                    </ul>  
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 부동산거래신고</a>
+                                            <a href="#">· 부동산거래계약해제신고</a>
+                                            <a href="#">· 외국인등부동산취득신고</a>
+                                            <a href="#">· 토지거래계약허가</a>
+                                            <a href="#">· 주택임대차계약신고</a>
+                                            <a href="#">· 부동산계약서검인신청</a>
+                                            <a href="#">· 부동산중개업정보</a>
+                                            <a href="#">· 개별공시지가열람</a>
+                                            <a href="#">· 주택가격열람</a>
+                                            <a href="#">· 부동산실거래가공개</a>
+                                            <a href="#">· 부동산실명제</a>
+                                            <a href="#">· 개별부담금</a>
+                                            <a href="#">· 주택가격열람</a>
+                                            <a href="#">· 부동산실거래가공개</a>
+                                            <a href="#">· 부동산실명제</a>
+                                            <a href="#">· 개발부담금</a>
+                                            <a href="#">· 부동산개발업정보</a>
+                                            <a href="#">· 도로명주소안내</a>
+                                            <a href="#">· 토지·지적정보</a>
+                                            <a href="#">· 도시개발사업</a>
+                                            <a href="#">· 건축물분양정보</a>
+                                            <a href="#">· 지역숙원사업</a>
+                                            <a href="#">· 부동산관련사이트</a>
+                                            <a href="#">· 스마트시티</a>
+                                            <a href="#">· 도시재생사업</a>
+                                            <a href="#">· 주거복지사업</a>
+                                        </li>
+                                    </ul> 
+                                </div>
+
+                                 <!-- 8번째 줄 -->
+                                 <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">교통·재난·안전</a></li>
+                                    </ul>  
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 교통정보센터</a>
+                                            <a href="#">· 버스</a>
+                                            <a href="#">· 지하철·철도</a>
+                                            <a href="#">· 자동차</a>
+                                            <a href="#">· 주정차단속</a>
+                                            <a href="#">· 주차장</a>
+                                            <a href="#">· 자전거</a>
+                                            <a href="#">· 재난신고전화안내</a>
+                                            <a href="#">· 개인정보침해예방</a>
+                                            <a href="#">· 민방위</a>
+                                            <a href="#">· 식품안전</a>
+                                            <a href="#">· CCTV관제센터</a>
+                                            <a href="#">· 안전모니터봉사단</a>
+                                            <a href="#">· 국민재난안전포털</a>
+                                        </li>
+                                    </ul> 
+                                </div>
+                                
+                                 <!-- 9번째 줄 -->
+                                 <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">환경·청소</a></li>
+                                    </ul>  
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 유용미생물(EM)보급사업</a>
+                                            <a href="#">· 재이용수안내</a>
+                                            <a href="#">· 특정경유차저공해사업</a>
+                                            <a href="#">· 대기오염도정보</a>
+                                            <a href="#">· 기후변화적응녹색도시</a>
+                                            <a href="#">· QR로배우는기상기후정보</a>
+                                            <a href="#">· 올바른쓰레기배충</a>
+                                            <a href="#">· 생태하천복원사업</a>
+                                            <a href="#">· 미세먼지클린특화단지조성</a>
+                                        </li>
+                                    </ul> 
+                                </div>
+                                
+                                 <!-- 10번째 줄 -->
+                                 <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">세금</a></li>
+                                    </ul>  
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 지방세납부·환급조회(위택스)</a>
+                                            <a href="#">· 지방세납부방법안내</a>
+                                            <a href="#">· 지방세고액체납자명단공개(경기도포털)</a>
+                                            <a href="#">· 지방세개요</a>
+                                            <a href="#">· 지방세세목별안내</a>
+                                            <a href="#">· 지방세세목별세율</a>
+                                            <a href="#">· 지방세세목별납기</a>
+                                            <a href="#">· 지방세가산세체계</a>
+                                            <a href="#">· 지방세구제제도</a>
+                                            <a href="#">· 지방세납제사보호관</a>
+                                            <a href="#">· 지방세선정대리인</a>
+                                            <a href="#">· 마을세무사</a>
+                                            <a href="#">· 지방세관련법</a>
+                                            <a href="#">· 지방세서식모음</a>
+                                            <a href="#">· 지방세외수입개요</a>
+                                            <a href="#">· 지방세외수입납부·조회</a>
+                                            <a href="#">· 세무부서안내</a>
+                                           
+                                        </li>
+                                    </ul> 
+                                </div>
+                                
+
+                                
+                            </div>
+                        </div>
+                    </li> 
+
+                    <!-- 메뉴7: 부천안내 -->
+                    <li id="menu7">
+                        <a href="#none" class="title_name">부천안내</a>
+                        <div class="sub">
+                            <div class="all_title">부천안내</div>
+
+                            <div class="sub_title"> <!-- table-row -->
+                                
+                                <!-- 1번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">열린시장실</a></li>
+                                    </ul>  
+                                    <ul class="right"></ul> 
+                                </div>
+                                
+                                <!-- 2번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">부천이미지</a></li>
+                                    </ul>  
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 문장(CI)</a>
+                                            <a href="#">· 브랜드(BI)</a>
+                                            <a href="#">· 나무,꽃,과일,새</a>
+                                            <a href="#">· 시민의노래</a>
+                                            <a href="#">· 시민헌장</a>
+                                            <a href="#">· 부천핸썹</a>
+                                            <a href="#">· 꿈보&쏭</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- 3번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">시청안내</a></li>
+                                    </ul> 
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 조직도</a>
+                                            <a href="#">· 업무·직원검색</a>
+                                            <a href="#">· 연관홈페이지검색</a>
+                                            <a href="#">· 청사배치안내</a>
+                                            <a href="#">· 시설이용안내</a>
+                                            <a href="#">· 행정복지센터찾기</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- 4번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">부서안내</a></li>
+                                    </ul>  
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 365안전센터</a>
+                                            <a href="#">· 홍보담당관</a>
+                                            <a href="#">· 감사담당관</a>
+                                            <a href="#">· 스마트시티담당관</a>
+                                            <a href="#">· 기획조정실</a>
+                                            <a href="#">· 문화경제국</a>
+                                            <a href="#">· 복지위생국</a>
+                                            <a href="#">· 도시국</a>
+                                            <a href="#">· 주택국</a>
+                                            <a href="#">· 교통국</a>
+                                            <a href="#">· 행정국</a>
+                                            <a href="#">· 부천시보건소</a>
+                                            <a href="#">· 환경사업단</a>
+                                            <a href="#">· 도로사업단</a>
+                                            <a href="#">· 공원사업단</a>
+                                            <a href="#">· 교육사업단</a>
+                                        </li>
+                                    </ul> 
+                                </div>
+
+                                <!-- 5번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">찾아오시는길</a></li>
+                                    </ul>  
+                                    <ul class="right"></ul> 
+                                </div>
+
+                                <!-- 6번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">부천시행정구역</a></li>
+                                    </ul>  
+                                    <ul class="right"></ul> 
+                                </div>
+
+                                <!-- 7번째 줄 -->
+                                <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">부천역사관</a></li>
+                                    </ul>  
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 역대부천시장</a>
+                                            <a href="#">· 부천의역사</a>
+                                            <a href="#">· 행정연혁</a>
+                                            <a href="#">· 부천의인물</a>
+                                        </li>
+                                    </ul> 
+                                </div>
+
+                                 <!-- 8번째 줄 -->
+                                 <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">구청역사관</a></li>
+                                    </ul>  
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 원미구역사관</a>
+                                            <a href="#">· 소사구역사관</a>
+                                            <a href="#">· 오정구역사관</a>
+                                        </li>
+                                    </ul> 
+                                </div>
+                                
+                                 <!-- 9번째 줄 -->
+                                 <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">디지털부천문화대전</a></li>
+                                    </ul>  
+                                    <ul class="right"></ul> 
+                                </div>
+                                
+                                 <!-- 10번째 줄 -->
+                                 <div class="title1"> <!-- table-cell -->
+                                    <ul class="left"> <!-- table-cell -->
+                                        <li><a href="#">교류도시</a></li>
+                                    </ul>  
+                                    <ul class="right">
+                                        <li>
+                                            <a href="#">· 국내도시</a>
+                                            <a href="#">· 국외도시</a>
+                                            <a href="#">· 국제교류새소식</a>
+                                        </li>
+                                    </ul> 
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </li> 
+
+                    <!-- 전체버튼 -->
+                    <li id="menu_all"><a href="#none"></a></li>
+                   
+                </ul>
+            </nav>
+
+        </header>
+        <!-- banner -->
+
+            <div id="banner">
+            
+            <!-- 비쥬얼 배너 타이틀 -->
+            <p id="main_title"><img src="./image/vbanner_title1.png" alt="title"></p>
+
+            
+            <!-- 서브 배너 전체-->
+              <div class="sub_banner"> 
+
+                  <ul>
+                      <!-- 배너1 -->
+                      <li class="banner1">
+                        <div class="banner1_wrap">
+                            <ul class="slides1">
+                                <li><a href="#none"><img src="./image/banner1_1.jpg" alt="banner1_1" /></a>
+                                    <span>[카드뉴스] 6.14.(화) 00:00 기준 부천시 확진 환자 113명 추가 발생</span></li>
+                                <li><a href="#none"><img src="./image/banner1_2.png" alt="banner1_2" /></a>
+                                    <span>탄소제로 서포터즈 모집</span></li>
+                                <li><a href="#none"><img src="./image/banner1_3.jpg" alt="banner1_3" /></a>
+                                    <span>봄의 색채로 물든 부천의 새 명소를 소개합니다! </span></li>
+                                <li><a href="#none"><img src="./image/banner1_4.jpg" alt="banner1_4" /></a>
+                                    <span>장덕천 부천시장, “2022년 시민과 함께 도약하는 부천 만들겠다” </span></li>
+                                <li><a href="#none"><img src="./image/banner1_5.jpg" alt="banner1_5" /></a>
+                                    <span>부천시 스토리산업 육성, 문화콘텐츠산업 경쟁력 강화 </span></li>
+                                <li><a href="#none"><img src="./image/banner1_6.jpg" alt="banner1_6" /></a>
+                                    <span>올해 161개 수상 성과, 든든한 부천 빛냈다</span></li>
+                                <li><a href="#none"><img src="./image/banner1_7.jpg" alt="banner1_7" /></a>
+                                    <span>부천시, 노인맞춤돌봄서비스 집중홍보에 나서</span></li>
+                                <li><a href="#none"><img src="./image/banner1_8.jpg" alt="banner1_8" /></a>
+                                    <span>‘바르게살기운동 중동 중위원회’ 출범 및 위원장 취임</span></li>
+                          
+                            </ul>
+
+                            <!-- 화살표 -->
+                            <div id="section_arrow1">
+                                <div class="arrow1">
+                                    <div class="arrow1_1">
+                                        <div class="arrow1_1_center">
+                                            <img src="image/arrow1.jpg" width="30" height="30" alt="prev" class="prev fl"/>
+                                            <img src="image/arrow2.jpg" width="30" height="30" alt="next" class="next fr"/>
+                                        </div>
+                                    </div>				
+                                </div>
+                            </div>
+
+        
+                        </div>
+                    </li>
+
+                </ul>
+
+                <ul>
+                    <!-- 배너2 -->
+                    <li class="banner2">
+                      <div class="banner2_wrap">
+                          <ul class="slides2">
+                              <li><a href="#none"><img src="./image/banner2_1.png" alt="banner2_1" /></a></li>
+                              <li><a href="#none"><img src="./image/banner2_2.png" alt="banner2_2" /></a></li>
+                              <li><a href="#none"><img src="./image/banner2_3.png" alt="banner2_3" /></a></li>
+                              <li><a href="#none"><img src="./image/banner2_4.png" alt="banner2_4" /></a></li>
+                              <li><a href="#none"><img src="./image/banner2_5.png" alt="banner2_5" /></a></li>
+                              <li><a href="#none"><img src="./image/banner2_6.png" alt="banner2_6" /></a></li>
+                              <li><a href="#none"><img src="./image/banner2_7.png" alt="banner2_7" /></a></li>
+                              <li><a href="#none"><img src="./image/banner2_8.png" alt="banner2_8" /></a></li>
+                              <li><a href="#none"><img src="./image/banner2_9.png" alt="banner2_9" /></a></li>
+                              <li><a href="#none"><img src="./image/banner2_10.png" alt="banner2_10" /></a></li>
+                           
+                          </ul>
+
+                           <!-- 화살표 -->
+                       <div id="section_arrow2">
+                        <div class="arrow2">
+                            <div class="arrow1_2">
+                                <div class="arrow1_2_center">
+                                    <img src="image/arrow1.jpg" width="30" height="30" alt="prev" class="prev fl"/>
+                                    <img src="image/arrow2.jpg" width="30" height="30" alt="next" class="next fr"/>
+                                </div>
+                            </div>				
+                        </div>
+                    </div>
+
+                      </div>
+
+                  </li>
+
+              </ul>
+
+
+                    <div class="mayor">
+                        <div class="mayor_text"><img src="./image/mayor_text.png" alt="mayor_text"></div>
+                        <div class="mayor_info">
+                            <a href="#none">· 시장에게 바란다<br></a>
+                            <a href="#none">· 열린시장실<br></a>
+                            <a href="#none">· 공약(매니페스토)<br></a>
+                            <div>사진갤러리</div>
+                        </div>
+                        <div class="mayor_menu">
+                            <div class="m_menu1_wrap">
+                                <div class="m_menu1">
+                                  <a href="#none">
+                                        <img src="./image/mayor_menu1.png" alt="menu1">
+                                        <span>청사배치도</span>
+                                  </a>
+                                </div>
+                            </div>
+                            <div class="m_menu2_wrap">
+                                <div class="m_menu2">
+                                    <img src="./image/mayor_menu2.png" alt="menu2">
+                                    <span>조직도</span>
+                                </div>
+                            </div>
+                            <div class="m_menu3_wrap">
+                                <div class="m_menu3">
+                                    <img src="./image/mayor_menu3.png" alt="menu3">
+                                    <span>찾아오시는길</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+              </div>
+
+
+        <!-- 컨텐츠 -->
+        <section>
+            <h2 style="display: none;">section</h2>
+
+            <!-- 첫번째 구역 -->
+            <div id="content1">
+
+                <!-- 탭 메뉴 -->
+                <div id="tab_menu">
+
+                <!-- 탭 메뉴 타이틀 -->
+                    <ul class="tabs">
+                        <li class="active tab1"><a href="#none">새소식</a></li>
+                        <li class="tab2"><a href="#none">보도자료</a></li>
+                        <li class="tab3"><a href="#none">채용시험</a></li>
+                        <li class="tab4"><a href="#none">광역동 소식</a></li>
+                    </ul>
+
+                    <!-- 탭 메뉴 내용 -->
+                    <div id="tab_content">
+                        <!-- 내용1 -->
+                        <div class="board1">
+                            <ul>
+                                <li>
+                                    <a href="#none">· 『특수형태근로종사자·프리랜서 민생경제지원』신청기간 연장 공고</a>
+                                    <span>2022-05-13</span>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <a href="#none">· 소상공인 부천시 방역지원금 접수안내</a>
+                                    <span>2022-05-04</span>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <a href="#none">· 부천시 예술인 재난지원금 지원 사업 안내</a>
+                                    <span>2022-05-03</span>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <a href="#none">· 부천시 종교시설 방역지원금 지원 안내</a>
+                                    <span>2022-05-02</span>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <a href="#none">· 코로나19 재택치료자 대면·비대면 진료 안내</a>
+                                    <span>2022-05-10</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 내용2 -->
+                        <div class="board2">
+                            <ul>
+                                <li>
+                                    <a href="#none">· 부천시 5월 25일 보도자료입니다.</a>
+                                    <span>2022-05-25</span>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <a href="#none">· 부천시 5월 24일 보도자료입니다.</a>
+                                    <span>2022-05-24</span>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <a href="#none">· 부천시 5월 23일 보도자료입니다.</a>
+                                    <span>2022-05-23</span>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <a href="#none">· 부천시 5월 20일 보도자료입니다.</a>
+                                    <span>2022-05-20</span>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <a href="#none">· 부천시 5월 19일 보도자료입니다.</a>
+                                    <span>2022-05-19</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 내용3 -->
+                        <div class="board3">
+                            <ul>
+                                <li>
+                                    <a href="#none">· 공중화장실 불법촬영 카메라 점검 전담인력(기간제 근로자) 추가채용 공고</a>
+                                    <span>2022-05-25</span>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <a href="#none">· 산울림청소년센터 2022년 제3회 한시계약직 직원 채용</a>
+                                    <span>2022-05-25</span>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <a href="#none">· 2021년 기준 광업·제조업 조사 관리요원 서류전형 합격자 및 면접시행 공고</a>
+                                    <span>2022-05-23</span>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <a href="#none">· 2022년 교통유발부담금 현지조사원(기간제근로자) 최종합격자 공고</a>
+                                    <span>2022-05-23</span>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <a href="#none">· 코로나19 대응 한시지원 기간제근로자 채용 최종합격자 공고</a>
+                                    <span>2022-05-23</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 내용4 -->
+                        <div class="board4">
+                            <ul>
+                                <li>
+                                    <a href="#none">· 부천시 제2기 동 주민자치회 위원 공개모집</a>
+                                    <span>2022-03-21</span>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <a href="#none">· 행정복지센터 및 현장민원실·주민지원센터 청사 현황 안내</a>
+                                    <span>2021-01-18</span>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <a href="#none">· 부천시 동별 주민총회 개최 안내</a>
+                                    <span>2020-08-07</span>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <a href="#none">· 2021년 주민자치회 자치계획사업 주민제안 공모</a>
+                                    <span>2020-06-08</span>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <a href="#none">· 부천시 주민자치회 구성 일정 연기(2020.6.1 → 2020.7.1.)</a>
+                                    <span>2020-06-02</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+
+               <div id="right_box">
+                    <!-- 직원찾기 -->
+                    <div id="search_staff">
+                        <div class="staff_title"><p>직원찾기</p></div> 
+                    <select name="select_staff" id="select_staff">
+                        <option>이름</option>
+                        <option>담당업무</option>
+                        <option>전화번호</option>
+                    </select>
+                    <input type="text" name="input_staff" id="input_staff" value="내용을 입력하세요.">
+
+                    <!-- 검색 버튼 -->
+                    <button>검색</button>
+                    </div>
+    
+                    <!-- 서비스 배너 -->
+                    <div id="service1">
+                       <div class="service1_text">부천시 소식문자 서비스 신청</div>
+                    </div>
+                    <div id="service2">
+                        <img src="./image/ser2_1.png" alt="img">
+                        <div class="service2_text">부천시의 모든 민원상담, 신고 등을 한 곳에서 통합하여 해결해 드립니다.</div>
+                    </div>
+               </div>
+
+
+
+                <!-- 주요 서비스 -->
+                <div id="main_service">
+                    <p>주요서비스</p>
+                     <!-- 아이콘 -->
+                    <div class="m_service_content">
+ 
+                        <!-- 아이콘1 -->
+                        <div class="service1">
+                            <a href="#none">
+                                <div class="service1_img"></div>
+                                <span>정부24</span>
+                            </a>
+                        </div>
+                        <!-- 아이콘2 -->
+                        <div class="service2">
+                            <a href="#none">
+                                <div class="service2_img"></div>
+                                <span>여권민원</span>
+                            </a>
+                         </div>
+                         <!-- 아이콘3 -->
+                        <div class="service3">
+                           <a href="#none">
+                                <div class="service3_img"></div>
+                                <span>공공서비스예약</span>
+                           </a>
+                         </div>
+                         <!-- 아이콘4 -->
+                        <div class="service4">
+                            <a href="#none">
+                                <div class="service4_img"></div>
+                                <span>자동차민원</span>
+                            </a>
+                         </div>
+                         <!-- 아이콘5 -->
+                        <div class="service5">
+                            <a href="#none">
+                                <div class="service5_img"></div>
+                                <span>무인민원발급기</span>
+                            </a>
+                         </div>
+                         <!-- 아이콘6 -->
+                        <div class="service6">
+                           <a href="#none">
+                                <div class="service6_img"></div>
+                                <span>토지분야공공정보공유포털</span>
+                           </a>
+                         </div>
+                         <!-- 아이콘7 -->
+                        <div class="service7">
+                            <a href="#none">
+                                <div class="service7_img"></div>
+                                <span>대형폐기물</span>
+                            </a>
+                         </div>
+                         <!-- 아이콘8 -->
+                        <div class="service8">
+                            <a href="#none">
+                                <div class="service8_img"></div>
+                                <span>세금납부종합안내</span>
+                            </a>
+                         </div>
+                         <!-- 아이콘9 -->
+                        <div class="service9">
+                            <a href="#none">
+                                <div class="service9_img"></div>
+                                <span>상수도요금</span>
+                            </a>
+                         </div>
+                         <!-- 아이콘10 -->
+                        <div class="service10">
+                           <a href="#none">
+                                <div class="service10_img"></div>
+                                <span>유가정보</span>
+                           </a>
+                         </div>
+                         <!-- 아이콘11-->
+                        <div class="service11">
+                            <a href="#none">
+                                <div class="service11_img"></div>
+                                <span>주정차단속SMS</span>
+                            </a>
+                         </div>
+                         <!-- 아이콘12 -->
+                        <div class="service12">
+                           <a href="#none">
+                                <div class="service12_img"></div>
+                               <span>부천시미세포털</span>
+                           </a>
+                         </div>
+ 
+ 
+ 
+                    </div>
+                </div>
+ 
+
+               <!-- 주요사업 -->
+               <div id="main_business">
+                <p>주요사업</p>
+                    <div class="b_wrap">
+                        <div class="b_1">
+                            <img src="./image/m_business1.png" alt="img1">
+                            <div>
+                                <span class="fir">부천대장신도시(공공주택지구)건설</span>
+                                <br>
+                                <span class="sec">첨단산업 기능을 갖춘 미래형 친환경 자족도시 건설
+                                    서부권 新 첨단산업벨트 구축으로 신 성장동력 확보
+                                    30만평 규모의 공원 · 녹지 조성으로 녹색도시환경 조성</span>
+                            </div>
+                        </div>
+                        <div class="b_2">
+                            <img src="./image/m_business2.png" alt="img2">
+                            <div>
+                                <span class="fir">종합운동장일원역세권융복합개발</span>
+                                <br>
+                                <span class="sec">종합운동장 일원 역세권을 융복합 R&D, 첨단지식산업, 스포츠 및 문화시설, 도시농업공원, 친환경 주거시설 등 개발</span>
+                            </div>
+                        </div>
+                        <div class="b_3">
+                            <img src="./image/m_business3.png" alt="img3">
+                            <div>
+                                <span class="fir">부천영상문화산업단지 복합개발 사업</span>
+                                <br>
+                                <span class="sec">부천시가 보유하고 있는 다양한 문화컨텐츠를 기반으로 영화·만화·영상(방송)·문화산업 등의 융·복합개발</span>
+                            </div>
+                        </div>
+                        <div class="b_4">
+                            <img src="./image/m_business4.png" alt="img4">
+                            <div>
+                                <span class="fir">부천역곡 공공주택지구 사업</span>
+                                <br>
+                                <span class="sec">'수도권 주택공급정책'에 부합하는 쾌적하고 스마트한 주거단지 조성 및 부천시 동부권역 자족기능 제고</span>
+                            </div>
+                        </div>
+                        <div class="b_5">
+                            <img src="./image/m_business5.png" alt="img5">
+                            <div>
+                                <span class="fir">오정군부대 일원 도시개발사업</span>
+                                <br>
+                                <span class="sec">지역발전 저해 및 원도심 균형발전에 지장을 초래하고 있는 오정동 군부대의 이전을 통하여 효율적인 토지 이용을 도모하고 주민생활 편의공간으로 제공</span>
+                            </div>
+                        </div>
+                        <div class="b_6">
+                            <img src="./image/m_business6.png" alt="img6">
+                            <div>
+                                <span class="fir">웹툰융합센터</span>
+                                <br>
+                                <span class="sec">웹툰융합센터는 문화체육관광부와 경기도의 지원을 받은 사업으로 총  19,376㎡ 연면적으로 웹툰창작실과 업체 입주공간이 중심으로 된 지하 3층, 지상 12층의 규모로 건립</span>
+                            </div>
+                        </div>
+                        <div class="b_7">
+                            <img src="./image/m_business7.png" alt="img7">
+                            <div>
+                                <span class="fir">부천역 스마트시티 조성</span>
+                                <br>
+                                <span class="sec">'스마트시티 부천'은 8개 분야에서 15개 사업이 진행되어 공유경제 및 관련 혁신산업 육성으로 미래 성장동력 확보</span>
+                            </div>
+                        </div>
+                        <div class="b_8">
+                            <img src="./image/m_business8.png" alt="img8">
+                            <div>
+                                <span class="fir">지역사회 통합돌봄(커뮤니티 케어)</span>
+                                <br>
+                                <span class="sec">종합운동장 일원 역세권을 융복합 R&D, 첨단지식산업, 스포츠 및 문화시설, 도시농업공원, 친환경 주거시설 등 개발</span>
+                            </div>
+                        </div>
+                        <div class="b_9">
+                            <img src="./image/m_business9.png" alt="img9">
+                            <div>
+                                <span class="fir">스마트 미세먼지 클린 특화단지 조성사업</span>
+                                <br>
+                                <span class="sec">시민들의 필요와 부천시 미세먼지 저감사업을 위한 스마트 미세먼지 클린 특화단지 조성</span>
+                            </div>
+                        </div>
+                        <div class="b_10">
+                            <img src="./image/m_business10.png" alt="img10">
+                            <div>
+                                <span class="fir">부천형 도시재생사업</span>
+                                <br>
+                                <span class="sec">도시재생사업을 통한 원도심 생활환경 개선사업으로 기초생활인프라 및 거점시설 확충으로 삶의 질 향상, 도시재생 거버넌스 구축을 통한 마을공동체 활성화</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="section_arrow3">
+                        <div class="arrow3">
+                            <div class="arrow1_3">
+                                <div class="arrow1_3_center">
+                                    <img src="image/arrow1_2_prev.png" width="24" height="24" alt="prev" class="prev fl"/>
+                                    <img src="image/arrow1_2_next.png" width="24" height="24" alt="next" class="next fr"/>
+                                </div>
+                            </div>				
+                        </div>
+                    </div>
+
+
+               </div>
+
+
+            </div>
+
+            <!-- 두번째 구역 -->
+            <div id="content2">
+            
+                <!-- banner2 -->
+                <div id="f_banner_all">
+                    <ul>
+                        <!-- 배너2 -->
+                        <li class="f_banner">
+                          <div class="f_banner_wrap">
+                              <ul class="f_slides">
+                                  <li><a href="#none"><img src="./image/f_banner1.jpg" alt="f_banner1" /></a></li>
+                                  <li><a href="#none"><img src="./image/f_banner2.jpg" alt="f_banner2" /></a></li>
+                                  <li><a href="#none"><img src="./image/f_banner3.png" alt="f_banner3" /></a></li>
+                                  <li><a href="#none"><img src="./image/f_banner4.jpg" alt="f_banner4" /></a></li>
+                              </ul>
+
+                              <div id="section_arrow4">
+                                <div class="arrow4">
+                                    <div class="arrow1_4">
+                                        <div class="arrow1_4_center">
+                                            <img src="image/arrow1.jpg" width="30" height="30" alt="prev" class="prev fl"/>
+                                            <img src="image/arrow2.jpg" width="30" height="30" alt="next" class="next fr"/>
+                                        </div>
+                                    </div>				
+                                </div>
+                            </div>
+        
+                          </div>
+                      </li>
+    
+                  </ul>
+
+
+                    
+                </div>
+
+                <!-- 공연 및 전시 -->
+                <div id="fest_info">
+                    <!-- 좌측 박스 -->
+                    <div class="f_info_1">
+                        <div class="f_info_1_titie"><span>이달의 공연 및 전시 · 기관별 문화 프로그램</span></div>
+                        <div class="f_info_1_con">
+                            <div class="fcon_wrap">
+                                <a href="#none">
+                                    <div class="fcon_pic1"></div>
+                                    <div class="fcon_text1">2022 단오축제 - <br> 부천한국화협회전</div>
+                                </a>
+                            </div>
+                            <div class="fcon_wrap">
+                                <a href="#none">
+                                    <div class="fcon_pic2"></div>
+                                    <div class="fcon_text2">정록 개인전</div>
+                                </a>
+                            </div>
+                            <div class="fcon_wrap">
+                                <a href="#none">
+                                    <div class="fcon_pic3"></div>
+                                    <div class="fcon_text3">현암 유길수 개인전</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 우측 박스 -->
+                    <div class="f_info_2">
+                        <div class="f_info_2_title">문화공간</div>
+                        <div class="f_info_2_con">
+                            <div class="fcon2_wrap"><a href="#none">부천<br>시티투어</a></div>
+                            <div class="fcon2_wrap"><a href="#none">향토유적</a></div>
+                            <div class="fcon2_wrap"><a href="#none">박물관</a></div>
+                            <div class="fcon2_wrap"><a href="#none">도서관<br>문화교실</a></div>
+                            <div class="fcon2_wrap"><a href="#none">공연장/전시장</a></div>
+                            <div class="fcon2_wrap"><a href="#none">체험교육</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 동영상 -->
+                <div id="fest_video">
+                   <a href="#none">
+                        <div class="f_video1">
+                        
+
+                            <div class="f_v_text">부천필하모닉오케스트라</div>
+                            <div class="f_v_img">
+                                <img src="./image/f_video1.jpg" alt="video1">
+                            </div>
+                        </div>
+                   </a>
+
+                    <a href="#none">
+                        <div class="f_video2">
+                            <div class="f_v_text">부천세계비보이대회(BBIC)</div>
+                            <div class="f_v_img">
+                                <img src="./image/f_video2.png" alt="video2">
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#none">
+                        <div class="f_video3">
+                            <div class="f_v_text">복사골예술제</div>
+                            <div class="f_v_img">
+                                <img src="./image/f_video3.png" alt="video3">
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#none">
+                        <div class="f_video4">
+                            <div class="f_v_text">전국대학가요제(BCSF)</div>
+                            <div class="f_v_img">
+                                <img src="./image/f_video4.png" alt="video4">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- 서브서비스 -->
+                <div id="sub_service">
+
+                    <!-- 아이콘 -->
+                   <div class="s_service_content">
+
+                        <div class="iconbox1">
+                            <div class="f_service1">
+                                <a href="#none">
+                                    <div class="f_service1_img"></div>
+                                    <span class="ficon_text">복사골예술제</span>
+                                </a>
+                            </div>
+                            <div class="f_service2">
+                                <a href="#none">
+                                    <div class="f_service2_img"></div>
+                                    <span class="ficon_text">부천세계비보이대회</span>
+                                </a>
+                            </div>
+                            <div class="f_service3">
+                                <a href="#none">
+                                    <div class="f_service3_img"></div>
+                                    <span class="ficon_text">부천국제판타스틱영화제</span>
+                                </a>
+                            </div>
+                            <div class="f_service4">
+                                <a href="#none">
+                                    <div class="f_service4_img"></div>
+                                    <span class="ficon_text">부천국제애니메이션페스티벌</span>
+                                </a>
+                            </div>
+                            <div class="f_service5">
+                                <a href="#none">
+                                    <div class="f_service5_img"></div>
+                                    <span class="ficon_text">부천필하모닉오케스트라</span>
+                                </a>
+                            </div>
+                            <div class="f_service6">
+                                <a href="#none">
+                                    <div class="f_service6_img"></div>
+                                    <span class="ficon_text">부천국제만화축제</span>
+                                </a>
+                            </div>
+                            <div class="f_service7">
+                                <a href="#none">
+                                    <div class="f_service7_img"></div>
+                                    <span class="ficon_text">전국대학가요제</span>
+                                </a>
+                            </div>
+                            <div class="more_btn"></div>
+                        </div>
+
+
+
+                        <div class="iconbox2">
+                            <div class="f_service8">
+                                <a href="#none">
+                                    <div class="f_service8_img"></div>
+                                    <span class="ficon_text">부천전국버스킹대회</span>
+                                </a>
+                            </div>
+                            <div class="f_service9">
+                                <a href="#none">
+                                    <div class="f_service9_img"></div>
+                                    <span class="ficon_text">부천아트밸리</span>
+                                </a>
+                            </div>
+                            <div class="f_service10">
+                                <a href="#none">
+                                    <div class="f_service10_img"></div>
+                                    <span class="ficon_text">테마관광</span>
+                                </a>
+                            </div>
+                            <div class="f_service11">
+                                <a href="#none">
+                                    <div class="f_service11_img"></div>
+                                    <span class="ficon_text">부천의맛집</span>
+                                </a>
+                            </div>
+                            <div class="f_service12">
+                                <a href="#none">
+                                    <div class="f_service12_img"></div>
+                                    <span class="ficon_text">부천의숙박</span>
+                                </a>
+                            </div>
+                        </div>
+                        
+                    </div> 
+                </div>
+
+                
+            </div> <!-- content2 -->
+            <!-- 배너2 -->
+                <div id="visual_banner2">
+                    <span class="sub_tit">축제가 가득한 부천</span>
+                    <span class="main_tit">즐거운 나, 행복한 도시</span>
+                    <div><a href="#none">더보기</a></div>
+                </div>
+           
+
+        </section>
+
+         <!-- footer -->
+
+         <footer id="footer">
+            <div class="footer_nav_wrap">
+                <div class="footer_nav">
+                    <!-- nav1 -->
+                    <ul class="fnav_1">
+                        <li><a href="#none">패밀리사이트</a>
+                            <img src="./image/footer_btn.png" alt="btn" class="btn">
+                        </li>
+                    </ul>
+                     <!-- nav2 -->
+                     <ul class="fnav_2">
+                        <li><a href="#none">행정복지센터</a>
+                            <img src="./image/footer_btn.png" alt="btn" class="btn">
+
+                        </li>
+                    </ul>
+                     <!-- nav3 -->
+                     <ul class="fnav_3">
+                        <li><a href="#none">출연/출자/위탁기관</a>
+                            <img src="./image/footer_btn.png" alt="btn" class="btn">
+  
+                        </li>
+                    </ul>
+                     <!-- nav4 -->
+                     <ul class="fnav_4">  
+                        <li><a href="#none">문화축제</a>
+                            <img src="./image/footer_btn.png" alt="btn" class="btn">
+
+                        </li>
+                    </ul>
+                     <!-- nav5 -->
+                     <ul class="fnav_5">
+                        <li><a href="#none">유관기관</a>
+                            <img src="./image/footer_btn.png" alt="btn" class="btn">
+
+                        </li>
+                    </ul>
+
+                    <!-- 펼침메뉴1 -->
+                    <ul class="footer_menu1">
+                        <li><a href="#none">계약정보공개</a></li>
+                        <li><a href="#none">대형폐기물 인터넷 신고</a></li>
+                        <li><a href="#none">부천기업 생산제품 홍보관</a></li>
+                        <li><a href="#none">부천시평생학습센터</a></li>
+                        <li><a href="#none">수도요금납부(이사정산)</a></li>
+                        <li><a href="#none">자연생태공원</a></li>
+                        <li><a href="#none">통계홈페이지</a></li>
+                        <li><a href="#none">계약정보공개(상하수도)</a></li>
+                        <li><a href="#none">도시농업한마당</a></li>
+                        <li><a href="#none">부천마을재생</a></li>
+                        <li><a href="#none">부천일자리센터</a></li>
+                        <li><a href="#none">시민단체네트워크</a></li>
+                        <li><a href="#none">자전거 홈페이지</a></li>
+                        <li><a href="#none">부천안전문화운동</a></li>
+                        <li><a href="#none">공공서비스 예약</a></li>
+                        <li><a href="#none">부천시 소식받기신청</a></li>
+                        <li><a href="#none">부천시립도서관</a></li>
+                        <li><a href="#none">상수도폼페이지</a></li>
+                        <li><a href="#none">어린이 식품안전 체험관</a></li>
+                        <li><a href="#none">재정공시</a></li>
+                        <li><a href="#none">공공데이터 수요조사</a></li>
+                        <li><a href="#none">공통주택 정보나눔터</a></li>
+                        <li><a href="#none">부동산중개업소안심서비스</a></li>
+                        <li><a href="#none">부천시보건소</a></li>
+                        <li><a href="#none">토지분야공공정보공유포털</a></li>
+                        <li><a href="#none">인생이모작지원센터</a></li>
+                        <li><a href="#none">주정차위반인터넷 민원처리</a></li>
+                        <li><a href="#none">부천시육아종합지원센터</a></li>
+                    </ul>
+
+                    <!-- 펼침메뉴2 -->
+                    <ul class="footer_menu2">
+                        <li><a href="#none">심곡동행정복지센터</a></li>
+                        <li><a href="#none">상동행정복지센터</a></li>
+                        <li><a href="#none">성곡동행정복지센터</a></li>
+                        <li><a href="#none">부천동행정복지센터</a></li>
+                        <li><a href="#none">대산동행정복지센터</a></li>
+                        <li><a href="#none">오정동행정복지센터</a></li>
+                        <li><a href="#none">중동행정복지센터</a></li>
+                        <li><a href="#none">소사본동행정복지센터</a></li>
+       
+                        
+                    </ul>
+
+                    <!-- 펼침메뉴3 -->
+                    <ul class="footer_menu3">
+                        <li><a href="#none">고강종합사회복지관</a></li>
+                        <li><a href="#none">부천도시공사</a></li>
+                        <li><a href="#none">부천시립노인전문병원</a></li>
+                        <li><a href="#none">부천시체육회통합</a></li>
+                        <li><a href="#none">사회복지협의회</a></li>
+                        <li><a href="#none">여성노동자회</a></li>
+                        <li><a href="#none">부천아트벙커B39</a></li>
+                        <li><a href="#none">부천시장애인자립생활센터</a></li>
+                        <li><a href="#none">그루터기장애인주간보호시설</a></li>
+                        <li><a href="#none">부천혜림직업재활시설</a></li>
+
+                        <li><a href="#none">부천시어린이급식관리지원센터</a></li>
+                        <li><a href="#none">부천시근로자종합복지관</a></li>
+                        <li><a href="#none">신중동종합사회복지관</a></li>
+                        <li><a href="#none">부천산업진흥원</a></li>
+                        <li><a href="#none">부천시사회적경제센터</a></li>
+                        <li><a href="#none">부천원미지역자활센터</a></li>
+                        <li><a href="#none">삼정종합사회복지관</a></li>
+                        <li><a href="#none">오정레포츠센터</a></li>
+                        <li><a href="#none">부천시종합사회복지관포털</a></li>
+                        <li><a href="#none">해밀도서관</a></li>
+
+                        <li><a href="#none">샘물자리직업재활시설</a></li>
+                        <li><a href="#none">사랑이야기직업재활시설</a></li>
+                        <li><a href="#none">부천FC1995</a></li>
+                        <li><a href="#none">부천시경로주간보호센터</a></li>
+                        <li><a href="#none">부천시자원봉사센터</a></li>
+                        <li><a href="#none">부천소사지역자활센터</a></li>
+                        <li><a href="#none">오정종합사회복지관</a></li>
+                        <li><a href="#none">부천시노인복지기관포털</a></li>
+                        <li><a href="#none">물댄동산주간보호시설</a></li>
+                        <li><a href="#none">부천시장애인직업재활시설</a></li>
+
+                        <li><a href="#none">부천혜림원</a></li>
+                        <li><a href="#none">부천여성청소년재단</a></li>
+                        <li><a href="#none">부천FC사회적협동조합</a></li>
+                        <li><a href="#none">부천시교통정보센터</a></li>
+                        <li><a href="#none">부천시장애인종합복지관</a></li>
+                        <li><a href="#none">부천장학재단</a></li>
+                        <li><a href="#none">송내사회체육관</a></li>
+                        <li><a href="#none">한국만화영상진흥원</a></li>
+                        <li><a href="#none">부천시여성관련기관포털</a></li>
+                        <li><a href="#none">라온제나단기보호시설</a></li>
+
+                        <li><a href="#none">현무장애인자립생활센터</a></li>
+                        <li><a href="#none">경기도 기본재난소득</a></li>
+                        <li><a href="#none">하늘아래장애인주간보호시설</a></li>
+
+                    </ul>
+
+                    <!-- 펼침메뉴4 -->
+                      <ul class="footer_menu4">
+                        <li><a href="#none">부천시3대봄꽃축제</a></li>
+                        <li><a href="#none">부천시립예술단</a></li>
+                        <li><a href="#none">부천유네스코창의도시</a></li>
+                        <li><a href="#none">부천국제판타스틱영화제</a></li>
+                        <li><a href="#none">부천문화재단</a></li>
+                        <li><a href="#none">한국예총부천지회</a></li>
+                        <li><a href="#none">부천국제만화축제</a></li>
+                        <li><a href="#none">부천문화원</a></li>
+                        <li><a href="#none">경기콘텐츠진흥원</a></li>
+                        <li><a href="#none">부천국제애니메이션페스티벌</a></li>
+                        <li><a href="#none">부천시박물관</a></li>
+       
+                        
+                    </ul>
+
+                    <!-- 펼침메뉴5 -->
+                    <ul class="footer_menu5">
+                        <li><a href="#none">부천고용노동지청</a></li>
+                        <li><a href="#none">부천우체국</a></li>
+                        <li><a href="#none">인천지검부천지청</a></li>
+                        <li><a href="#none">경기도어린이집회계관리</a></li>
+                        <li><a href="#none">경기남부가정위탁지원센터</a></li>
+                        <li><a href="#none">부천교육지원청</a></li>
+                        <li><a href="#none">원미경찰서</a></li>
+                        <li><a href="#none">인천지법부천지원</a></li>
+                        <li><a href="#none">부천희망재단</a></li>
+                        <li><a href="#none">부천세무서</a></li>
+                        <li><a href="#none">소사경찰서</a></li>
+                        <li><a href="#none">행정안전부 법령유권해석</a></li>
+                        <li><a href="#none">경기도 민생범죄통계</a></li>
+       
+                        
+                    </ul>
+
+
+
+                </div>
+                <div class="footer_cont_wrap">
+                    <img src="./image/footer_img1.png" alt="img1" class="img1">
+                    <div class="footer_cont_txt">
+                        <ul class="first">
+                            <li><a href="#none" class="first_tit">개인정보처리방침</a></li>
+                            <li><a href="#none">&nbsp;이메일수집거부정책</a></li>
+                            <li><a href="#none">&nbsp;저작권정책</a></li>
+                            <li><a href="#none">&nbsp;찾아오시는 길</a></li>
+                            <li><a href="#none">&nbsp;뷰어다운로드</a></li>
+                        </ul>
+                        <ul class="second">
+                            <li>[14547] 경기도 부천시 길주로 210(중동)
+                                Copyright ©2017 BUCHEONCITY All rights reserved.</li>
+                        </ul>
+                        <ul class="third">
+                            <li>부천시 365콜센터
+                                032-320-3000
+                                평일 08~19시, 주말/공휴일 09~18시</li>
+                        </ul>
+                    </div>
+                    <img src="./image/footer_img2.png" alt="img2" class="img2">
+                    <img src="./image/footer_img3.png" alt="img3" class="img3">
+                    <img src="./image/footer_img4.png" alt="img4" class="img4">
+                </div>
+            </div>
+        </footer>
+
+
+    </div>
+
+<script>
+        function setCookie(name, value, expiresdays){
+
+        var todayDate = new Date();
+        todayDate.setDate(todayDate.getDate() + expiresdays);
+        document.cookie = name + "=" + escape(value) + "; path=/;expires=" + todayDate.toUTCString(); + ";"
+
+        }
+
+        function closeWin(){
+        if(document.notice_form.chkbok.checked){
+            setCookie("modal_popWrap","done",1); 
+        }
+        document.all['modal_popWrap'].style.visibility = "hidden";
+        }
+
+</script>
+
+</body>
+</html>
